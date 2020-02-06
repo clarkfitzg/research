@@ -1,0 +1,27 @@
+digraph workflow {
+    rankdir=LR;
+
+ graph [fontname = "calibri"];
+ node [fontname = "calibri", color = "lightgoldenrod3", fontcolor = "white"];
+ edge [fontname = "calibri", color = "lightgoldenrod3", fontcolor = "white"];
+
+node [fontsize = 20];
+
+pcode[label = "fast
+parallel
+program"];
+script [label = "Serial
+R program"];
+data [label = "data
+description"];
+platform [label = "platform
+description"];
+    
+makeParallel [shape = "box", fontname = "courier"];
+
+script -> makeParallel;
+data -> makeParallel;
+platform -> makeParallel;
+
+makeParallel -> pcode;
+}
